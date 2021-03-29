@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.madao.xss.mapper.ReciverDao">
+  <resultMap id="BaseResultMap" type="com.madao.xss.pojo.Reciver">
+    <result column="host" jdbcType="VARCHAR" property="host" />
+    <result column="connection" jdbcType="VARCHAR" property="connection" />
+    <result column="user_agent" jdbcType="VARCHAR" property="userAgent" />
+    <result column="accept" jdbcType="VARCHAR" property="accept" />
+    <result column="accept-encoding" jdbcType="VARCHAR" property="acceptEncoding" />
+    <result column="cookie" jdbcType="VARCHAR" property="cookie" />
+    <result column="time" jdbcType="VARCHAR" property="time" />
+    <result column="data" jdbcType="VARCHAR" property="data" />
+    <result column="ip" jdbcType="VARCHAR" property="ip" />
+  </resultMap>
+  <insert id="insert" parameterType="com.madao.xss.pojo.Reciver">
+    insert into reciver (`host`, `connection`, userAgent,
+      accept, acceptEncoding, cookie,
+      `time`, `data`, ip)
+    values (#{host,jdbcType=VARCHAR}, #{connection,jdbcType=VARCHAR}, #{userAgent,jdbcType=VARCHAR}, 
+      #{accept,jdbcType=VARCHAR}, #{acceptEncoding,jdbcType=VARCHAR}, #{cookie,jdbcType=VARCHAR}, 
+      #{time,jdbcType=VARCHAR}, #{data,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR})
+  </insert>
+  <delete id="delReciver" parameterType="String">
+    delete from reciver where time = #{time}
+  </delete>
+  <select id="getRecivers" resultType="com.madao.xss.pojo.Reciver">
+    select * from reciver
+  </select>
+  <insert id="insertSelective" parameterType="com.madao.xss.pojo.Reciver">
+    insert into reciver
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="host != null">
+        `host`,
+      </if>
+      <if test="connection != null">
+        `connection`,
+      </if>
+      <if test="userAgent != null">
+        userAgent,
+      </if>
+      <if test="accept != null">
+        accept,
+      </if>
+      <if test="acceptEncoding != null">
+        acceptEncoding,
+      </if>
+      <if test="cookie != null">
+        cookie,
+      </if>
+      <if test="time != null">
+        `time`,
+      </if>
+      <if test="data != null">
+        `data`,
+      </if>
+      <if test="ip != null">
+        ip,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="host != null">
+        #{host,jdbcType=VARCHAR},
+      </if>
+      <if test="connection != null">
+        #{connection,jdbcType=VARCHAR},
+      </if>
+      <if test="userAgent != null">
+        #{userAgent,jdbcType=VARCHAR},
+      </if>
+      <if test="accept != null">
+        #{accept,jdbcType=VARCHAR},
+      </if>
+      <if test="acceptEncoding != null">
+        #{acceptEncoding,jdbcType=VARCHAR},
+      </if>
+      <if test="cookie != null">
+        #{cookie,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="data != null">
+        #{data,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null">
+        #{ip,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

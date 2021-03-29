@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.madao.xss.mapper.DingConfigDao">
+  <resultMap id="BaseResultMap" type="com.madao.xss.pojo.DingConfig">
+    <result column="webhook" jdbcType="VARCHAR" property="webhook" />
+    <result column="isNotice" jdbcType="INTEGER" property="isnotice" />
+    <result column="msgConfig" jdbcType="INTEGER" property="msgconfig" />
+  </resultMap>
+
+  <update id="updateConfig" parameterType="com.madao.xss.pojo.DingConfig">
+    update dingconfig
+    <trim prefix="set" suffixOverrides=",">
+      <if test="webhook != null">webhook=#{webhook},</if>
+      <if test="isnotice != null">isNotice=#{isnotice},</if>
+      <if test="msgconfig != null">msgConfig=#{msgconfig}</if>
+    </trim>
+  </update>
+
+  <select id="getConfig" resultType="com.madao.xss.pojo.DingConfig">
+    select * from dingconfig
+  </select>
+
+</mapper>

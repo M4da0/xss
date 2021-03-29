@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost/xss
+    username: xhcms
+    password: 1234
+  security:
+    user:
+      name: "madao"
+      password: "1234"
+
+server:
+  port: 8433
+
+mybatis:
+  mapper-locations: classpath:generator/*.xml
+
