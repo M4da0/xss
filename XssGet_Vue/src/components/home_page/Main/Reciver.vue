@@ -10,6 +10,7 @@
         >
         <el-table-column label="时间" prop="time" sortable></el-table-column>
         <el-table-column label="IP" prop="ip" width="150"></el-table-column>
+        <el-table-column label="Method" prop="method" width="150"></el-table-column>
         <el-table-column label="数据" prop="data" width="300"></el-table-column>
         <el-table-column label="保持连接" prop="connection"></el-table-column>
 

@@ -3,12 +3,10 @@ package com.madao.xss.controller;
 import com.madao.xss.mapper.PayloadsMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-
+import org.springframework.util.Base64Utils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import sun.misc.BASE64Decoder;
-
 
 import java.io.IOException;
 
@@ -28,8 +26,7 @@ public class GetJscodeController {
 
 
         //base64 解码 得到 payload
-        BASE64Decoder decoder = new BASE64Decoder();
-        byte[] bytes = decoder.decodeBuffer(data);
+        byte[] bytes = Base64Utils.decode(data.getBytes());
         String jsCode = new String(bytes,"utf-8");
 
         return jsCode;

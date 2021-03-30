@@ -25,8 +25,8 @@ public class DingDing {
 
         try {
             ResponseEntity<String> strbody = restTemplate.exchange(webhook, HttpMethod.POST,httpEntity,String.class);
-            JSONObject jsonObject = JSONObject.parseObject(strbody.getBody());
-            log.info(jsonObject.toJSONString());
+            //JSONObject jsonObject = JSONObject.parseObject(strbody.getBody());
+            //log.info(jsonObject.toJSONString());
 
         } catch (Exception e) {
             log.info(e.toString());

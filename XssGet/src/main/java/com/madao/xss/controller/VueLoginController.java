@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class VueLoginController {
 
-    @GetMapping("/home")
+    @GetMapping("/home/**")
     public String login() {
         return "index";
     }

@@ -12,14 +12,7 @@
     <result column="data" jdbcType="VARCHAR" property="data" />
     <result column="ip" jdbcType="VARCHAR" property="ip" />
   </resultMap>
-  <insert id="insert" parameterType="com.madao.xss.pojo.Reciver">
-    insert into reciver (`host`, `connection`, userAgent,
-      accept, acceptEncoding, cookie,
-      `time`, `data`, ip)
-    values (#{host,jdbcType=VARCHAR}, #{connection,jdbcType=VARCHAR}, #{userAgent,jdbcType=VARCHAR}, 
-      #{accept,jdbcType=VARCHAR}, #{acceptEncoding,jdbcType=VARCHAR}, #{cookie,jdbcType=VARCHAR}, 
-      #{time,jdbcType=VARCHAR}, #{data,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR})
-  </insert>
+
   <delete id="delReciver" parameterType="String">
     delete from reciver where time = #{time}
   </delete>
@@ -53,6 +46,9 @@
       <if test="data != null">
         `data`,
       </if>
+      <if test="method != null">
+        `method`,
+      </if>
       <if test="ip != null">
         ip,
       </if>
@@ -81,6 +77,9 @@
       </if>
       <if test="data != null">
         #{data,jdbcType=VARCHAR},
+      </if>
+      <if test="method != null">
+        #{method,jdbcType=VARCHAR},
       </if>
       <if test="ip != null">
         #{ip,jdbcType=VARCHAR},

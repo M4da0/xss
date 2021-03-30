@@ -21,6 +21,8 @@ public class Reciver implements Serializable {
 
     private String cookie;
 
+    private String method;
+
     @Override
     public String toString() {
         return  "host='" + host + '\'' +
