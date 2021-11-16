@@ -124,10 +124,3 @@ _更新：_1.增加了全局过滤器，会拦截所有访问该应用的请求�
 ---
 
 自己的水平不高，刚学没多久，大佬轻喷。项目仅供学习使用，严禁用于非法用途。
-
-
-QQ：
-
-![图片.png](https://cdn.nlark.com/yuque/0/2021/png/1239731/1617006216374-4e57fe74-d3a8-477a-aabf-1bc372fe342d.png#align=left&display=inline&height=281&margin=%5Bobject%20Object%5D&name=%E5%9B%BE%E7%89%87.png&originHeight=561&originWidth=500&size=108370&status=done&style=none&width=250)
-
-
